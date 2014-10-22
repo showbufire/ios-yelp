@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BusinessListViewController : UIViewController
+@interface BusinessListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
