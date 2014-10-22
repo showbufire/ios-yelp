@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		813D8E2219F7631800384E2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2119F7631800384E2E /* main.m */; };
 		813D8E2519F7631800384E2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2419F7631800384E2E /* AppDelegate.m */; };
-		813D8E2819F7631800384E2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2719F7631800384E2E /* ViewController.m */; };
-		813D8E2B19F7631800384E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E2919F7631800384E2E /* Main.storyboard */; };
 		813D8E2D19F7631800384E2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E2C19F7631800384E2E /* Images.xcassets */; };
 		813D8E3019F7631800384E2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E2E19F7631800384E2E /* LaunchScreen.xib */; };
 		813D8E3C19F7631800384E2E /* yelpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E3B19F7631800384E2E /* yelpTests.m */; };
+		813D8E4819F7656A00384E2E /* BusinessListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E4619F7656A00384E2E /* BusinessListViewController.m */; };
+		813D8E4919F7656A00384E2E /* BusinessListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E4719F7656A00384E2E /* BusinessListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		813D8E2119F7631800384E2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		813D8E2319F7631800384E2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		813D8E2419F7631800384E2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		813D8E2619F7631800384E2E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		813D8E2719F7631800384E2E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		813D8E2A19F7631800384E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		813D8E2C19F7631800384E2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		813D8E2F19F7631800384E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		813D8E3519F7631800384E2E /* yelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		813D8E3A19F7631800384E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		813D8E3B19F7631800384E2E /* yelpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yelpTests.m; sourceTree = "<group>"; };
+		813D8E4519F7656A00384E2E /* BusinessListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessListViewController.h; sourceTree = "<group>"; };
+		813D8E4619F7656A00384E2E /* BusinessListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessListViewController.m; sourceTree = "<group>"; };
+		813D8E4719F7656A00384E2E /* BusinessListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +83,9 @@
 			children = (
 				813D8E2319F7631800384E2E /* AppDelegate.h */,
 				813D8E2419F7631800384E2E /* AppDelegate.m */,
-				813D8E2619F7631800384E2E /* ViewController.h */,
-				813D8E2719F7631800384E2E /* ViewController.m */,
-				813D8E2919F7631800384E2E /* Main.storyboard */,
+				813D8E4519F7656A00384E2E /* BusinessListViewController.h */,
+				813D8E4619F7656A00384E2E /* BusinessListViewController.m */,
+				813D8E4719F7656A00384E2E /* BusinessListViewController.xib */,
 				813D8E2C19F7631800384E2E /* Images.xcassets */,
 				813D8E2E19F7631800384E2E /* LaunchScreen.xib */,
 				813D8E1F19F7631800384E2E /* Supporting Files */,
@@ -199,9 +199,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813D8E2B19F7631800384E2E /* Main.storyboard in Resources */,
 				813D8E3019F7631800384E2E /* LaunchScreen.xib in Resources */,
 				813D8E2D19F7631800384E2E /* Images.xcassets in Resources */,
+				813D8E4919F7656A00384E2E /* BusinessListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813D8E2819F7631800384E2E /* ViewController.m in Sources */,
+				813D8E4819F7656A00384E2E /* BusinessListViewController.m in Sources */,
 				813D8E2519F7631800384E2E /* AppDelegate.m in Sources */,
 				813D8E2219F7631800384E2E /* main.m in Sources */,
 			);
@@ -244,14 +244,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		813D8E2919F7631800384E2E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				813D8E2A19F7631800384E2E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		813D8E2E19F7631800384E2E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

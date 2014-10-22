@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BusinessListViewController.h
 //  yelp
 //
 //  Created by Xiao Jiang on 10/21/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BusinessListViewController : UIViewController
 
 @end
-
