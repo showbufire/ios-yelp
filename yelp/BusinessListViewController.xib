@@ -22,9 +22,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="pPM-xd-Hdt" secondAttribute="trailing" id="GdZ-vb-X4T"/>
+                <constraint firstItem="pPM-xd-Hdt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kfa-fv-ceT"/>
                 <constraint firstItem="pPM-xd-Hdt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LSB-ue-8l2"/>
+                <constraint firstItem="pPM-xd-Hdt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MQ3-4m-UPC"/>
                 <constraint firstItem="pPM-xd-Hdt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZSg-IO-YVF"/>
                 <constraint firstAttribute="bottom" secondItem="pPM-xd-Hdt" secondAttribute="bottom" id="gE7-c4-46H"/>
+                <constraint firstAttribute="bottom" secondItem="pPM-xd-Hdt" secondAttribute="bottom" id="ia6-kn-NB5"/>
                 <constraint firstAttribute="trailing" secondItem="pPM-xd-Hdt" secondAttribute="trailing" id="mhL-RN-o8b"/>
             </constraints>
         </view>

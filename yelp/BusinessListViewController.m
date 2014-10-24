@@ -14,7 +14,7 @@
 NSString * const kYelpConsumerKey = @"OZ4PEz83dNdt3gfER3K8Ww";
 NSString * const kYelpConsumerSecret = @"DayH1uFEXU08sUtltMRDBLq08ko";
 NSString * const kYelpToken = @"6qJDUrDMKcU_CfyAyqrEWHaRvT6QkpPU";
-NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
+NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE"; 
 
 
 @interface BusinessListViewController ()
@@ -33,7 +33,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
-    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self makeAPIRequest];
 }
@@ -65,8 +65,10 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 - (UITableViewCell *)tableView:(UITableViewCell *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *business = [self getBusinessToShowAtIndex:indexPath.row];
     BusinessCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
-    cell.titleLableView.text = business[@"name"];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:business[@"image_url"]]];
+    cell.nameLabel.text = business[@"name"];
+    [cell.photoView setImageWithURL:[NSURL URLWithString:business[@"image_url"]]];
+    cell.distanceLabel.text = @"1.27mi";
+    [cell.ratingImageView setImageWithURL:[NSURL URLWithString:business[@"rating_img_url"]]];
     return cell;
 }
 
