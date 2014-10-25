@@ -68,7 +68,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     cell.nameLabel.text = business[@"name"];
     [cell.photoView setImageWithURL:[NSURL URLWithString:business[@"image_url"]]];
     cell.distanceLabel.text = @"1.27mi";
-    [cell.ratingImageView setImageWithURL:[NSURL URLWithString:business[@"rating_img_url"]]];
+    [cell.starRatingView setImageWithURL:[NSURL URLWithString:business[@"rating_img_url"]]];
     return cell;
 }
 
