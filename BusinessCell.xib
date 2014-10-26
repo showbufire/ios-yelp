@@ -114,6 +114,8 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addrLabel" destination="s1t-ay-YVd" id="gdE-gJ-w0A"/>
+                <outlet property="categoryLabel" destination="s7C-wO-paX" id="f1i-IF-ph6"/>
                 <outlet property="distanceLabel" destination="lY5-IE-tdt" id="YYs-y2-pcV"/>
                 <outlet property="nameLabel" destination="Mz1-dh-xuq" id="RcY-RO-Del"/>
                 <outlet property="photoView" destination="s2S-uw-yXe" id="41U-RG-UHh"/>
