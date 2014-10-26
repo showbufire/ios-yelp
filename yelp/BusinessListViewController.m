@@ -46,12 +46,19 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 
 - (void) customizeNavigationBar {
     UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:nil];
-
+    
+    UISearchBar *searchBar = [[UISearchBar alloc] init];
+                              
     self.navigationItem.leftBarButtonItem = filterButton;
+    self.navigationItem.titleView = searchBar;
     
     self.navigationController.navigationBar.barTintColor = (UIColorFromRGB(0xc41200));
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    
+
+//    searchBar.delegate = self;
+    self.navigationItem.titleView = searchBar;
 }
 
 - (void) makeAPIRequest {
