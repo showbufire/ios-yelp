@@ -11,6 +11,8 @@
 @interface FilterSettingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
+@property (weak, readonly) NSDictionary *filters;
+
 @end
 
 @implementation FilterSettingViewController
@@ -57,7 +59,7 @@
 
 - (void) onApplyButton {
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self.delegate filterSettingViewController:self didChangeFilters:nil];
+    [self.delegate filterSettingViewController:self didChangeFilters:self.filters];
 }
 
 @end
