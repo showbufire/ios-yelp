@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @property (strong, nonatomic) NSDictionary *business;
+@property (strong, nonatomic) NSString *category;
 
 @end
 
@@ -31,10 +32,22 @@
 - (void) updateViewAttributes {
     self.nameLabel.text = self.business[@"name"];
     [self.photoView setImageWithURL:[NSURL URLWithString:self.business[@"image_url"]]];
-    self.distanceLabel.text = @"1.27mi";
     [self.starRatingView setImageWithURL:[NSURL URLWithString:self.business[@"rating_img_url"]]];
     self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews", self.business[@"review_count"]];
     self.addrLabel.text = [self.business valueForKeyPath:@"location.display_address"][0];
+    
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", [self.business[@"distance"] floatValue]];
+
+    [self updateCategoryLabel];
+}
+
+- (void) updateCategoryLabel {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (NSArray *cat in self.business[@"categories"]) {
+        [arr addObject:cat[0]];
+    }
+    self.category = [arr componentsJoinedByString:@", "];
+    self.categoryLabel.text = self.category;
 }
 
 - (void) updateBusiness:(NSDictionary *)business {
