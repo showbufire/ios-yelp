@@ -25,16 +25,33 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 
 @implementation BusinessListViewController
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self setUpTableView];
+    [self customizeNavigationBar];
+    
+    [self makeAPIRequest];
+}
+
+- (void) setUpTableView {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void) customizeNavigationBar {
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:nil];
+
+    self.navigationItem.leftBarButtonItem = filterButton;
     
-    [self makeAPIRequest];
+    self.navigationController.navigationBar.barTintColor = (UIColorFromRGB(0xc41200));
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
 }
 
 - (void) makeAPIRequest {

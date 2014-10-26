@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @property (strong, nonatomic) NSDictionary *business;
-@property (strong, nonatomic) NSString *category;
 
 @end
 
@@ -46,8 +45,8 @@
     for (NSArray *cat in self.business[@"categories"]) {
         [arr addObject:cat[0]];
     }
-    self.category = [arr componentsJoinedByString:@", "];
-    self.categoryLabel.text = self.category;
+    NSString *category = [arr componentsJoinedByString:@", "];
+    self.categoryLabel.text = category;
 }
 
 - (void) updateBusiness:(NSDictionary *)business {
