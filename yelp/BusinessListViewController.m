@@ -103,6 +103,13 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // don't know why, but the view is messed up switching between views
+    [self.tableView reloadData];
+}
+
 /*
 #pragma mark - Navigation
 

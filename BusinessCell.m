@@ -36,7 +36,7 @@
     self.addrLabel.text = [self.business valueForKeyPath:@"location.display_address"][0];
     
     self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", [self.business[@"distance"] floatValue]];
-
+    
     [self updateCategoryLabel];
 }
 
@@ -45,8 +45,7 @@
     for (NSArray *cat in self.business[@"categories"]) {
         [arr addObject:cat[0]];
     }
-    NSString *category = [arr componentsJoinedByString:@", "];
-    self.categoryLabel.text = category;
+    self.categoryLabel.text = [arr componentsJoinedByString:@", "];
 }
 
 - (void) updateBusiness:(NSDictionary *)business {
