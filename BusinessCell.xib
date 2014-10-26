@@ -16,7 +16,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" text="name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz1-dh-xuq">
                         <rect key="frame" x="85" y="5" width="221" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -61,7 +61,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7C-wO-paX">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7C-wO-paX">
                         <rect key="frame" x="85" y="64" width="55" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,6 +90,7 @@
                     <constraint firstItem="s2S-uw-yXe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="msA-9H-Ft6"/>
                     <constraint firstItem="SrK-AZ-Y92" firstAttribute="top" secondItem="Mz1-dh-xuq" secondAttribute="bottom" constant="1" id="ocz-Op-jZ2"/>
                     <constraint firstItem="s1t-ay-YVd" firstAttribute="leading" secondItem="s2S-uw-yXe" secondAttribute="trailing" constant="5" id="oid-XA-NhV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="s7C-wO-paX" secondAttribute="trailing" constant="80" id="pQk-yX-sdk"/>
                     <constraint firstItem="Mz1-dh-xuq" firstAttribute="leading" secondItem="s2S-uw-yXe" secondAttribute="trailing" constant="5" id="saN-DU-9dD"/>
                     <constraint firstItem="s1t-ay-YVd" firstAttribute="top" secondItem="Mz1-dh-xuq" secondAttribute="bottom" constant="21" id="t0o-zk-Q0C"/>
                     <constraint firstItem="lY5-IE-tdt" firstAttribute="leading" secondItem="Mz1-dh-xuq" secondAttribute="trailing" constant="5" id="uPV-uO-yhX"/>
