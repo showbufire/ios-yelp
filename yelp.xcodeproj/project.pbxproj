@@ -18,6 +18,8 @@
 		813D8E5C19F76E6500384E2E /* BusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E5A19F76E6500384E2E /* BusinessCell.m */; };
 		813D8E5D19F76E6500384E2E /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E5B19F76E6500384E2E /* BusinessCell.xib */; };
 		813D8E6019F7783200384E2E /* YelpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E5F19F7783200384E2E /* YelpClient.m */; };
+		81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */; };
+		81C1AB3319FD5645009D02A9 /* FilterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		813D8E5B19F76E6500384E2E /* BusinessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusinessCell.xib; path = ../BusinessCell.xib; sourceTree = "<group>"; };
 		813D8E5E19F7783200384E2E /* YelpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpClient.h; sourceTree = "<group>"; };
 		813D8E5F19F7783200384E2E /* YelpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpClient.m; sourceTree = "<group>"; };
+		81C1AB2F19FD5645009D02A9 /* FilterSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSettingViewController.h; sourceTree = "<group>"; };
+		81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSettingViewController.m; sourceTree = "<group>"; };
+		81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterSettingViewController.xib; sourceTree = "<group>"; };
 		B59E4DA4555D659049347F21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +117,9 @@
 				813D8E2419F7631800384E2E /* AppDelegate.m */,
 				813D8E4519F7656A00384E2E /* BusinessListViewController.h */,
 				813D8E4619F7656A00384E2E /* BusinessListViewController.m */,
+				81C1AB2F19FD5645009D02A9 /* FilterSettingViewController.h */,
+				81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */,
+				81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */,
 				813D8E4719F7656A00384E2E /* BusinessListViewController.xib */,
 				813D8E5E19F7783200384E2E /* YelpClient.h */,
 				813D8E5F19F7783200384E2E /* YelpClient.m */,
@@ -239,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				813D8E3019F7631800384E2E /* LaunchScreen.xib in Resources */,
+				81C1AB3319FD5645009D02A9 /* FilterSettingViewController.xib in Resources */,
 				813D8E5D19F76E6500384E2E /* BusinessCell.xib in Resources */,
 				813D8E2D19F7631800384E2E /* Images.xcassets in Resources */,
 				813D8E4919F7656A00384E2E /* BusinessListViewController.xib in Resources */,
@@ -295,6 +304,7 @@
 				813D8E4819F7656A00384E2E /* BusinessListViewController.m in Sources */,
 				813D8E5C19F76E6500384E2E /* BusinessCell.m in Sources */,
 				813D8E2519F7631800384E2E /* AppDelegate.m in Sources */,
+				81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */,
 				813D8E6019F7783200384E2E /* YelpClient.m in Sources */,
 				813D8E2219F7631800384E2E /* main.m in Sources */,
 			);

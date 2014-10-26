@@ -9,6 +9,7 @@
 #import "BusinessListViewController.h"
 #import "BusinessCell.h"
 #import "YelpClient.h"
+#import "FilterSettingViewController.h"
 
 NSString * const kYelpConsumerKey = @"OZ4PEz83dNdt3gfER3K8Ww";
 NSString * const kYelpConsumerSecret = @"DayH1uFEXU08sUtltMRDBLq08ko";
@@ -45,7 +46,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 }
 
 - (void) customizeNavigationBar {
-    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:nil];
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(goToFilterSettingPage)];
     
     UISearchBar *searchBar = [[UISearchBar alloc] init];
                               
@@ -59,6 +60,11 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 
 //    searchBar.delegate = self;
     self.navigationItem.titleView = searchBar;
+}
+
+- (void) goToFilterSettingPage {
+    FilterSettingViewController *fsvc = [[FilterSettingViewController alloc] init];
+    [self.navigationController pushViewController:fsvc animated:YES];
 }
 
 - (void) makeAPIRequest {
