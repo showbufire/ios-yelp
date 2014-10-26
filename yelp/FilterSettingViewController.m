@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @property (weak, readonly) NSDictionary *filters;
+@property (strong, nonatomic) NSArray *sortOptions;
 
 @end
 
@@ -36,6 +37,8 @@ const int SORT_SECTION = 0;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButton)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStylePlain target:self action:@selector(onApplyButton)];
+    
+    self.sortOptions = @[@"best match", @"distance", @"highest rated"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,17 +47,17 @@ const int SORT_SECTION = 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == SORT_SECTION) {
-        return 3;
+    switch (section) {
+        case SORT_SECTION: return [self.sortOptions count];
     }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == SORT_SECTION) {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = @"Shit";
-    return cell;
+      UITableViewCell *cell = [[UITableViewCell alloc] init];
+        cell.textLabel.text = self.sortOptions[indexPath.row];
+      return cell;
     }
     return nil;
 }

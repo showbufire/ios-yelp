@@ -20,6 +20,8 @@
 		813D8E6019F7783200384E2E /* YelpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E5F19F7783200384E2E /* YelpClient.m */; };
 		81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */; };
 		81C1AB3319FD5645009D02A9 /* FilterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */; };
+		81C1AB4619FDB268009D02A9 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1AB4419FDB268009D02A9 /* SwitchCell.m */; };
+		81C1AB4719FDB268009D02A9 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C1AB4519FDB268009D02A9 /* SwitchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSettingViewController.m; sourceTree = "<group>"; };
 		81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterSettingViewController.xib; sourceTree = "<group>"; };
 		81C1AB3819FD9CA3009D02A9 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		81C1AB4319FDB268009D02A9 /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
+		81C1AB4419FDB268009D02A9 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
+		81C1AB4519FDB268009D02A9 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		B59E4DA4555D659049347F21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +183,9 @@
 				813D8E5919F76E6500384E2E /* BusinessCell.h */,
 				813D8E5A19F76E6500384E2E /* BusinessCell.m */,
 				813D8E5B19F76E6500384E2E /* BusinessCell.xib */,
+				81C1AB4319FDB268009D02A9 /* SwitchCell.h */,
+				81C1AB4419FDB268009D02A9 /* SwitchCell.m */,
+				81C1AB4519FDB268009D02A9 /* SwitchCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 				813D8E5D19F76E6500384E2E /* BusinessCell.xib in Resources */,
 				813D8E2D19F7631800384E2E /* Images.xcassets in Resources */,
 				813D8E4919F7656A00384E2E /* BusinessListViewController.xib in Resources */,
+				81C1AB4719FDB268009D02A9 /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +339,7 @@
 				813D8E4819F7656A00384E2E /* BusinessListViewController.m in Sources */,
 				813D8E5C19F76E6500384E2E /* BusinessCell.m in Sources */,
 				813D8E2519F7631800384E2E /* AppDelegate.m in Sources */,
+				81C1AB4619FDB268009D02A9 /* SwitchCell.m in Sources */,
 				81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */,
 				813D8E6019F7783200384E2E /* YelpClient.m in Sources */,
 				813D8E2219F7631800384E2E /* main.m in Sources */,
