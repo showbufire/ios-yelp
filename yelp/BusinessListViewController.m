@@ -9,7 +9,6 @@
 #import "BusinessListViewController.h"
 #import "BusinessCell.h"
 #import "YelpClient.h"
-#import "UIImageView+AFNetworking.h"
 
 NSString * const kYelpConsumerKey = @"OZ4PEz83dNdt3gfER3K8Ww";
 NSString * const kYelpConsumerSecret = @"DayH1uFEXU08sUtltMRDBLq08ko";
@@ -65,12 +64,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 - (UITableViewCell *)tableView:(UITableViewCell *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *business = [self getBusinessToShowAtIndex:indexPath.row];
     BusinessCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
-    cell.nameLabel.text = business[@"name"];
-    [cell.photoView setImageWithURL:[NSURL URLWithString:business[@"image_url"]]];
-    cell.distanceLabel.text = @"1.27mi";
-    [cell.starRatingView setImageWithURL:[NSURL URLWithString:business[@"rating_img_url"]]];
-    cell.reviewCountLabel.text = @"253 reviews";
-    cell.addrLabel.text = [business valueForKeyPath:@"location.display_address"][0];
+    [cell updateBusiness:business];
     return cell;
 }
 

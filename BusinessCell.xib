@@ -114,12 +114,13 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="addrLabel" destination="s1t-ay-YVd" id="gdE-gJ-w0A"/>
-                <outlet property="categoryLabel" destination="s7C-wO-paX" id="f1i-IF-ph6"/>
-                <outlet property="distanceLabel" destination="lY5-IE-tdt" id="YYs-y2-pcV"/>
-                <outlet property="nameLabel" destination="Mz1-dh-xuq" id="RcY-RO-Del"/>
-                <outlet property="photoView" destination="s2S-uw-yXe" id="41U-RG-UHh"/>
-                <outlet property="starRatingView" destination="Zjq-p9-LsI" id="ScM-oL-6HF"/>
+                <outlet property="addrLabel" destination="s1t-ay-YVd" id="cys-K3-nrg"/>
+                <outlet property="categoryLabel" destination="s7C-wO-paX" id="egf-I0-CdN"/>
+                <outlet property="distanceLabel" destination="lY5-IE-tdt" id="d91-vg-Dc9"/>
+                <outlet property="nameLabel" destination="Mz1-dh-xuq" id="w8k-X6-6Rw"/>
+                <outlet property="photoView" destination="s2S-uw-yXe" id="nHR-q0-cyf"/>
+                <outlet property="reviewCountLabel" destination="SrK-AZ-Y92" id="3VK-pU-oYC"/>
+                <outlet property="starRatingView" destination="Zjq-p9-LsI" id="aAx-AX-AEq"/>
             </connections>
             <point key="canvasLocation" x="52" y="37.5"/>
         </tableViewCell>
