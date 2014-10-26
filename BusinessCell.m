@@ -29,13 +29,12 @@
 }
 
 - (void) updateViewAttributes {
-     self.nameLabel.text = self.business[@"name"];
-     [self.photoView setImageWithURL:[NSURL URLWithString:self.business[@"image_url"]]];
-     self.distanceLabel.text = @"1.27mi";
-     [self.starRatingView setImageWithURL:[NSURL URLWithString:self.business[@"rating_img_url"]]];
-     self.reviewCountLabel.text = @"253 reviews";
-     self.addrLabel.text = [self.business valueForKeyPath:@"location.display_address"][0];
-
+    self.nameLabel.text = self.business[@"name"];
+    [self.photoView setImageWithURL:[NSURL URLWithString:self.business[@"image_url"]]];
+    self.distanceLabel.text = @"1.27mi";
+    [self.starRatingView setImageWithURL:[NSURL URLWithString:self.business[@"rating_img_url"]]];
+    self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews", self.business[@"review_count"]];
+    self.addrLabel.text = [self.business valueForKeyPath:@"location.display_address"][0];
 }
 
 - (void) updateBusiness:(NSDictionary *)business {

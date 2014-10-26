@@ -47,7 +47,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrK-AZ-Y92">
-                        <rect key="frame" x="170" y="27" width="79" height="16"/>
+                        <rect key="frame" x="170" y="26" width="79" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                     <constraint firstItem="s7C-wO-paX" firstAttribute="leading" secondItem="s2S-uw-yXe" secondAttribute="trailing" constant="5" id="dlf-zN-kRs"/>
                     <constraint firstAttribute="bottom" secondItem="s7C-wO-paX" secondAttribute="bottom" constant="11" id="iZc-LK-7DG"/>
                     <constraint firstItem="s2S-uw-yXe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="msA-9H-Ft6"/>
-                    <constraint firstItem="SrK-AZ-Y92" firstAttribute="top" secondItem="Mz1-dh-xuq" secondAttribute="bottom" constant="2" id="ocz-Op-jZ2"/>
+                    <constraint firstItem="SrK-AZ-Y92" firstAttribute="top" secondItem="Mz1-dh-xuq" secondAttribute="bottom" constant="1" id="ocz-Op-jZ2"/>
                     <constraint firstItem="s1t-ay-YVd" firstAttribute="leading" secondItem="s2S-uw-yXe" secondAttribute="trailing" constant="5" id="oid-XA-NhV"/>
                     <constraint firstItem="Mz1-dh-xuq" firstAttribute="leading" secondItem="s2S-uw-yXe" secondAttribute="trailing" constant="5" id="saN-DU-9dD"/>
                     <constraint firstItem="s1t-ay-YVd" firstAttribute="top" secondItem="Mz1-dh-xuq" secondAttribute="bottom" constant="21" id="t0o-zk-Q0C"/>
