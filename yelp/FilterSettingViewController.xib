@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterSettingViewController">
             <connections>
+                <outlet property="settingTableView" destination="l94-ih-409" id="XQb-bA-R3B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,8 +21,18 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l94-ih-409">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="l94-ih-409" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JyP-H7-MPh"/>
+                <constraint firstItem="l94-ih-409" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SJZ-si-vES"/>
+                <constraint firstAttribute="trailing" secondItem="l94-ih-409" secondAttribute="trailing" id="TLd-To-cNZ"/>
+                <constraint firstAttribute="bottom" secondItem="l94-ih-409" secondAttribute="bottom" id="VbM-eg-n5K"/>
+            </constraints>
         </view>
     </objects>
 </document>

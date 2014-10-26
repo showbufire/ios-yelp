@@ -26,6 +26,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+//    self.nameLabel.preferredMaxLayoutWidth = self.nameLabel.frame.size.width;
 }
 
 - (void) updateViewAttributes {

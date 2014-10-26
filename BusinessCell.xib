@@ -63,6 +63,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7C-wO-paX">
                         <rect key="frame" x="85" y="64" width="223" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="223" id="5wh-Qk-FOb"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -111,6 +114,7 @@
                         <exclude reference="Hde-hA-eHe"/>
                         <exclude reference="cWG-nq-rEn"/>
                         <exclude reference="iZc-LK-7DG"/>
+                        <exclude reference="pQk-yX-sdk"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

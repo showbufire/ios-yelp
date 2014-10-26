@@ -9,6 +9,7 @@
 #import "FilterSettingViewController.h"
 
 @interface FilterSettingViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @end
 
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButton)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStylePlain target:self action:@selector(onApplyButton)];
+    
+    self.settingTableView.delegate = self;
+    self.settingTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +32,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    cell.textLabel.text = @"Shit";
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Radius";
+}
+
+
+- (void) onCancelButton {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) onApplyButton {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate filterSettingViewController:self didChangeFilters:nil];
+}
 
 @end

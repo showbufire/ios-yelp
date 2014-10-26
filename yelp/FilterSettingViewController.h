@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FilterSettingViewController : UIViewController
+@class FilterSettingViewController;
+
+@protocol FilterSettingViewControllerDelegate <NSObject>
+
+- (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters;
+
+@end
+
+@interface FilterSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) id<FilterSettingViewControllerDelegate> delegate;
 
 @end

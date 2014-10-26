@@ -34,7 +34,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     
     [self setUpTableView];
     [self customizeNavigationBar];
-    
+        
     [self makeAPIRequest];
 }
 
@@ -64,7 +64,10 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 
 - (void) goToFilterSettingPage {
     FilterSettingViewController *fsvc = [[FilterSettingViewController alloc] init];
-    [self.navigationController pushViewController:fsvc animated:YES];
+    fsvc.delegate = self; 
+    
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fsvc];
+    [self presentViewController:nvc animated:YES completion:nil];
 }
 
 - (void) makeAPIRequest {
@@ -110,14 +113,8 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [self.tableView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters {
+    NSLog(@"I'm here");
 }
-*/
 
 @end
