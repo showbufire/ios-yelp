@@ -7,6 +7,7 @@
 //
 
 #import "FilterSettingViewController.h"
+#import "common.h"
 
 @interface FilterSettingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
@@ -17,16 +18,24 @@
 
 @implementation FilterSettingViewController
 
+const int SORT_SECTION = 0;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+
+    self.settingTableView.delegate = self;
+    self.settingTableView.dataSource = self;
+    
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = (UIColorFromRGB(0xc41200));
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButton)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStylePlain target:self action:@selector(onApplyButton)];
-    
-    self.settingTableView.delegate = self;
-    self.settingTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,13 +44,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if (section == SORT_SECTION) {
+        return 3;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == SORT_SECTION) {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     cell.textLabel.text = @"Shit";
     return cell;
+    }
+    return nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,7 +64,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Radius";
+    return @"Sort";
 }
 
 
