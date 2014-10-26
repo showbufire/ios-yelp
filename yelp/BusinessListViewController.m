@@ -113,7 +113,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 }
 
 - (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters {
-    NSLog(@"I'm here");
+    NSLog(@"%@", filters);
 }
 
 @end

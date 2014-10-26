@@ -14,6 +14,7 @@
 
 @property (weak, readonly) NSDictionary *filters;
 @property (strong, nonatomic) NSArray *sortOptions;
+@property (assign, nonatomic) NSInteger sortFilter;
 
 @end
 
@@ -21,10 +22,21 @@
 
 const int SORT_SECTION = 0;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self initSortSections];
+    }
+    return self;
+}
+
+- (void)initSortSections {
+    self.sortOptions = @[@"best match", @"distance", @"highest rated"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
 
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
@@ -37,8 +49,6 @@ const int SORT_SECTION = 0;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButton)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStylePlain target:self action:@selector(onApplyButton)];
-    
-    self.sortOptions = @[@"best match", @"distance", @"highest rated"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +72,16 @@ const int SORT_SECTION = 0;
     return nil;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.section) {
+        case SORT_SECTION: [self onSelectSortSectionRow:indexPath.row];
+    }
+}
+                            
+- (void)onSelectSortSectionRow:(NSInteger)row {
+    self.sortFilter = row;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -69,7 +89,6 @@ const int SORT_SECTION = 0;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Sort";
 }
-
 
 - (void) onCancelButton {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -79,5 +98,16 @@ const int SORT_SECTION = 0;
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.delegate filterSettingViewController:self didChangeFilters:self.filters];
 }
+
+- (NSDictionary *)filters {
+    NSMutableDictionary *ret = [[NSMutableDictionary alloc] init];
+    
+    if (self.sortFilter) {
+        [ret setObject:[NSNumber numberWithInteger:self.sortFilter] forKey:@"sortFilter"];
+    }
+    
+    return ret;
+}
+
 
 @end
