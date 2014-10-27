@@ -22,6 +22,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray *businesses;
+@property (strong, nonatomic) NSDictionary *filters;
 
 @end
 
@@ -33,8 +34,8 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     
     [self setUpTableView];
     [self customizeNavigationBar];
-        
-    [self makeAPIRequest:nil];
+    
+    [self makeAPIRequest:nil term:@""];
 }
 
 - (void) setUpTableView {
@@ -42,6 +43,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void) customizeNavigationBar {
@@ -51,6 +53,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
                               
     self.navigationItem.leftBarButtonItem = filterButton;
     self.navigationItem.titleView = searchBar;
+    searchBar.delegate = self;
     
     self.navigationController.navigationBar.barTintColor = (UIColorFromRGB(0xc41200));
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -61,6 +64,11 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     self.navigationItem.titleView = searchBar;
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSString *term = searchBar.text;
+    [self makeAPIRequest:self.filters term:term];
+}
+
 - (void) goToFilterSettingPage {
     FilterSettingViewController *fsvc = [[FilterSettingViewController alloc] init];
     fsvc.delegate = self; 
@@ -69,11 +77,9 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [self presentViewController:nvc animated:YES completion:nil];
 }
 
-- (void) makeAPIRequest:(NSDictionary *) filters {
+- (void) makeAPIRequest:(NSDictionary *) filters term:(NSString *)term {
     YelpClient *client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
-    NSLog(@"here");
-    [client searchWithTerm:@"" parameters:filters success:^(AFHTTPRequestOperation *operation, id response) {
-        NSLog(@"succ");
+    [client searchWithTerm:term parameters:filters success:^(AFHTTPRequestOperation *operation, id response) {
         self.businesses = [response objectForKey:@"businesses"];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -119,8 +125,8 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 }
 
 - (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters {
-    NSLog(@"%@", filters);
-    [self makeAPIRequest:filters];
+    self.filters = filters;
+    [self makeAPIRequest:filters term:@""];
 }
 
 @end

@@ -39,10 +39,8 @@
 }
 
 - (IBAction)onChecked:(id)sender {
-    if (!_checked) {
-        _checked = YES;
-        [self.delegate checkboxCell:self cellChecked:self.indexPath];
-        [self.checkBoxButton setTitle:@"checked" forState:UIControlStateNormal];
-    }
+    _checked = YES;
+    [self.delegate checkboxCell:self cellChecked:self.indexPath];
+    [self.checkBoxButton setTitle:@"checked" forState:UIControlStateNormal];
 }
 @end

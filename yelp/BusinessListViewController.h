@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "FilterSettingViewController.h"
 
-@interface BusinessListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, FilterSettingViewControllerDelegate>
+@interface BusinessListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, FilterSettingViewControllerDelegate, UISearchBarDelegate>
 
 @end
