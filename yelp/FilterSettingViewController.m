@@ -8,30 +8,37 @@
 
 #import "FilterSettingViewController.h"
 #import "common.h"
+#import "ExpandableCell.h"
 
 @interface FilterSettingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @property (weak, readonly) NSDictionary *filters;
-@property (strong, nonatomic) NSArray *sortOptions;
 @property (assign, nonatomic) NSInteger sortFilter;
+
+@property (strong, nonatomic) NSArray *sections;
+@property (strong, nonatomic) NSArray *sortOptions;
+
+@property (strong, nonatomic) NSMutableSet *expandedSections;
 
 @end
 
 @implementation FilterSettingViewController
 
-const int SORT_SECTION = 0;
+const int MOST_POP_SECTION = 0;
+const int DISTANCE_SECTIOn = 1;
+const int SORT_SECTION = 2;
+const int CATEGORY_SECTION = 3;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self initSortSections];
+        self.sections = @[@"Most Popular", @"Distance", @"Sort by", @"Categories"];
+        self.sortOptions = @[@"best match", @"distance", @"highest rated"];
+        self.expandedSections = [NSMutableSet set];
+        self.sortFilter = 0;
     }
     return self;
-}
-
-- (void)initSortSections {
-    self.sortOptions = @[@"best match", @"distance", @"highest rated"];
 }
 
 - (void)viewDidLoad {
@@ -40,8 +47,10 @@ const int SORT_SECTION = 0;
 
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
+    [self.settingTableView registerNib:[UINib nibWithNibName:@"ExpandableCell" bundle:nil] forCellReuseIdentifier:@"ExpandableCell"];
     
     self.navigationController.navigationBar.translucent = NO;
+    self.title = @"Filters";
     self.navigationController.navigationBar.barTintColor = (UIColorFromRGB(0xc41200));
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
@@ -57,19 +66,37 @@ const int SORT_SECTION = 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case SORT_SECTION: return [self.sortOptions count];
+    if (section == SORT_SECTION) {
+        return [self numberOfRowsInSortSection];
     }
     return 0;
 }
 
+- (NSInteger)numberOfRowsInSortSection {
+    if ([self.expandedSections containsObject:[NSNumber numberWithInt:SORT_SECTION]]) {
+        return [self.sortOptions count];
+    }
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == SORT_SECTION) {
-      UITableViewCell *cell = [[UITableViewCell alloc] init];
-        cell.textLabel.text = self.sortOptions[indexPath.row];
-      return cell;
+        return [self cellForRowAtRowForSortSection:tableView indexPath:indexPath];
     }
     return nil;
+}
+
+- (UITableViewCell *) cellForRowAtRowForSortSection:(UITableView *)tableView indexPath:(NSIndexPath *) indexPath {
+    if ([self.expandedSections containsObject:[NSNumber numberWithInt:SORT_SECTION]]) {
+        UITableViewCell* cell = [[UITableViewCell alloc] init];
+        cell.textLabel.text = self.sortOptions[indexPath.row];
+        return cell;
+    }
+    ExpandableCell *cell = [self.settingTableView dequeueReusableCellWithIdentifier:@"ExpandableCell"];
+    cell.titleLabel.text = self.sortOptions[self.sortFilter];
+    cell.section = indexPath.section;
+    cell.delegate = self;
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,11 +110,11 @@ const int SORT_SECTION = 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.sections count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Sort";
+    return self.sections[section];
 }
 
 - (void) onCancelButton {
@@ -109,5 +136,9 @@ const int SORT_SECTION = 0;
     return ret;
 }
 
+- (void)extandableCell:(ExpandableCell *)cell sectionExpanded:(NSInteger)section {
+    [self.expandedSections addObject:[NSNumber numberWithInteger:section]];
+    [self.settingTableView reloadData];
+}
 
 @end

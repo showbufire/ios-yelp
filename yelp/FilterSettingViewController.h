@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExpandableCell.h"
 
 @class FilterSettingViewController;
 
@@ -16,7 +17,7 @@
 
 @end
 
-@interface FilterSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FilterSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ExpandabaleCellDelegate>
 
 @property (nonatomic, weak) id<FilterSettingViewControllerDelegate> delegate;
 
