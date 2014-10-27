@@ -26,7 +26,6 @@
 }
 
 - (IBAction)onTouchUpInside:(id)sender {
-    NSLog(@"section expanded %ld", self.section);
     [self.delegate extandableCell:self sectionExpanded:self.section];
 }
 @end

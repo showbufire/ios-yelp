@@ -48,6 +48,7 @@ const int CATEGORY_SECTION = 3;
     self.settingTableView.dataSource = self;
     [self.settingTableView registerNib:[UINib nibWithNibName:@"ExpandableCell" bundle:nil] forCellReuseIdentifier:@"ExpandableCell"];
     [self.settingTableView registerNib:[UINib nibWithNibName:@"CheckboxCell" bundle:nil] forCellReuseIdentifier:@"CheckboxCell"];
+    self.settingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationController.navigationBar.translucent = NO;
     self.title = @"Filters";
