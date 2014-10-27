@@ -24,9 +24,11 @@
 - (void) setChecked:(BOOL)checked {
     _checked = checked;
     if (_checked) {
-      [self.checkBoxButton setTitle:@"checked" forState:UIControlStateNormal];
+      UIImage *btnImage = [UIImage imageNamed:@"checked-checkbox"];
+      [self.checkBoxButton setImage:btnImage forState:UIControlStateNormal];
     } else {
-      [self.checkBoxButton setTitle:@"unchecked" forState:UIControlStateNormal];
+      UIImage *btnImage = [UIImage imageNamed:@"unchecked-checkbox"];
+      [self.checkBoxButton setImage:btnImage forState:UIControlStateNormal];
     }
 }
 
