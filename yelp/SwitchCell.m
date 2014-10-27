@@ -38,6 +38,6 @@
 }
 
 - (IBAction)switchValueChanged:(id)sender {
-    [self.delegate switchCell:self didUpdateValue:self.switchView.on];
+    [self.delegate switchCell:self didUpdateValue:self.switchView.on indexPath:self.indexPath];
 }
 @end

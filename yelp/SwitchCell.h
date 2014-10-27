@@ -12,7 +12,7 @@
 
 @protocol SwitchCellDelegate <NSObject>
 
-- (void)switchCell:(SwitchCell *)cell didUpdateValue:(BOOL) value;
+- (void)switchCell:(SwitchCell *)cell didUpdateValue:(BOOL)value indexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) id<SwitchCellDelegate> delegate;
 @property (nonatomic, assign) BOOL on;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 
 - (void)setOn:(BOOL)on animated:(BOOL)animated;
 
