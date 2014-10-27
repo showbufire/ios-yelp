@@ -1,6 +1,6 @@
-## Rotten Tomatoes
+## Yelp
 
-This is a movies app displaying box office and top rental DVDs using the [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON).
+This is an simplified ios app for Yelp.
 
 Time spent: 16 hours
 
@@ -26,6 +26,7 @@ Time spent: 16 hours
 None
 
 ### Walkthrough
+![Video Walkthrough](http://i.imgur.com/TBBeoOG.gif)
 
 ### Known problems
 - Searchbar: Keyboard doesn't pop up on tap
