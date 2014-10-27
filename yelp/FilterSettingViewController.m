@@ -34,7 +34,6 @@ const int MOST_POP_SECTION = 0;
 const int DISTANCE_SECTION = 1;
 const int SORT_SECTION = 2;
 const int CATEGORY_SECTION = 3;
-const double METERS_PER_MILE = 1609.34;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

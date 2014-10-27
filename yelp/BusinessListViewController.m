@@ -34,7 +34,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [self setUpTableView];
     [self customizeNavigationBar];
         
-    [self makeAPIRequest];
+    [self makeAPIRequest:nil];
 }
 
 - (void) setUpTableView {
@@ -69,11 +69,11 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [self presentViewController:nvc animated:YES completion:nil];
 }
 
-- (void) makeAPIRequest {
+- (void) makeAPIRequest:(NSDictionary *) filters {
     YelpClient *client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
-        
-    [client searchWithTerm:@"" success:^(AFHTTPRequestOperation *operation, id response) {
-
+    NSLog(@"here");
+    [client searchWithTerm:@"" parameters:filters success:^(AFHTTPRequestOperation *operation, id response) {
+        NSLog(@"succ");
         self.businesses = [response objectForKey:@"businesses"];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -120,6 +120,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 
 - (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters {
     NSLog(@"%@", filters);
+    [self makeAPIRequest:filters];
 }
 
 @end

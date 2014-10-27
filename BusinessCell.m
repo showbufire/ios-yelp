@@ -8,6 +8,7 @@
 
 #import "BusinessCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "common.h"
 
 @interface BusinessCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
@@ -36,7 +37,7 @@
     self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews", self.business[@"review_count"]];
     self.addrLabel.text = [self.business valueForKeyPath:@"location.display_address"][0];
     
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", [self.business[@"distance"] floatValue]];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", [self.business[@"distance"] floatValue] / METERS_PER_MILE];
     
     [self updateCategoryLabel];
 }
