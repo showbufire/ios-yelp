@@ -8,7 +8,6 @@
 
 #import "FilterSettingViewController.h"
 #import "common.h"
-#import "ExpandableCell.h"
 
 @interface FilterSettingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
@@ -48,6 +47,7 @@ const int CATEGORY_SECTION = 3;
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
     [self.settingTableView registerNib:[UINib nibWithNibName:@"ExpandableCell" bundle:nil] forCellReuseIdentifier:@"ExpandableCell"];
+    [self.settingTableView registerNib:[UINib nibWithNibName:@"CheckboxCell" bundle:nil] forCellReuseIdentifier:@"CheckboxCell"];
     
     self.navigationController.navigationBar.translucent = NO;
     self.title = @"Filters";
@@ -88,8 +88,11 @@ const int CATEGORY_SECTION = 3;
 
 - (UITableViewCell *) cellForRowAtRowForSortSection:(UITableView *)tableView indexPath:(NSIndexPath *) indexPath {
     if ([self.expandedSections containsObject:[NSNumber numberWithInt:SORT_SECTION]]) {
-        UITableViewCell* cell = [[UITableViewCell alloc] init];
-        cell.textLabel.text = self.sortOptions[indexPath.row];
+        CheckboxCell* cell = [self.settingTableView dequeueReusableCellWithIdentifier:@"CheckboxCell"];
+        cell.titleLabel.text = self.sortOptions[indexPath.row];
+        cell.indexPath = indexPath;
+        [cell setChecked:(indexPath.row == self.sortFilter)];
+        cell.delegate = self;
         return cell;
     }
     ExpandableCell *cell = [self.settingTableView dequeueReusableCellWithIdentifier:@"ExpandableCell"];
@@ -141,4 +144,11 @@ const int CATEGORY_SECTION = 3;
     [self.settingTableView reloadData];
 }
 
+- (void)checkboxCell:(CheckboxCell *)cell cellChecked:(NSIndexPath *)indexPath {
+    if (indexPath.section == SORT_SECTION) {
+        [self.expandedSections removeObject:[NSNumber numberWithInteger:indexPath.section]];
+        self.sortFilter = indexPath.row;
+    }
+    [self.settingTableView reloadData];
+}
 @end

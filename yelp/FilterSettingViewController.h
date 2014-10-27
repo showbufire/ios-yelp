@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ExpandableCell.h"
+#import "CheckboxCell.h"
 
 @class FilterSettingViewController;
 
@@ -17,7 +18,7 @@
 
 @end
 
-@interface FilterSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ExpandabaleCellDelegate>
+@interface FilterSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ExpandabaleCellDelegate, CheckboxCellDelegate>
 
 @property (nonatomic, weak) id<FilterSettingViewControllerDelegate> delegate;
 

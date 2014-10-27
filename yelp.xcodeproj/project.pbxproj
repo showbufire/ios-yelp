@@ -10,6 +10,8 @@
 		06CB95C2E8E39A115D602950 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 408746507FDECB5ED58F554E /* libPods.a */; };
 		813BE16F19FDC9DE00F969CF /* ExpandableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BE16D19FDC9DE00F969CF /* ExpandableCell.m */; };
 		813BE17019FDC9DE00F969CF /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */; };
+		813BE17419FDED7B00F969CF /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BE17219FDED7B00F969CF /* CheckboxCell.m */; };
+		813BE17519FDED7B00F969CF /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813BE17319FDED7B00F969CF /* CheckboxCell.xib */; };
 		813D8E2219F7631800384E2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2119F7631800384E2E /* main.m */; };
 		813D8E2519F7631800384E2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2419F7631800384E2E /* AppDelegate.m */; };
 		813D8E2D19F7631800384E2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E2C19F7631800384E2E /* Images.xcassets */; };
@@ -42,6 +44,9 @@
 		813BE16C19FDC9DE00F969CF /* ExpandableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableCell.h; sourceTree = "<group>"; };
 		813BE16D19FDC9DE00F969CF /* ExpandableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableCell.m; sourceTree = "<group>"; };
 		813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
+		813BE17119FDED7B00F969CF /* CheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxCell.h; sourceTree = "<group>"; };
+		813BE17219FDED7B00F969CF /* CheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxCell.m; sourceTree = "<group>"; };
+		813BE17319FDED7B00F969CF /* CheckboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
 		813D8E1C19F7631800384E2E /* yelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813D8E2019F7631800384E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		813D8E2119F7631800384E2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -194,6 +199,9 @@
 				81C1AB4319FDB268009D02A9 /* SwitchCell.h */,
 				81C1AB4419FDB268009D02A9 /* SwitchCell.m */,
 				81C1AB4519FDB268009D02A9 /* SwitchCell.xib */,
+				813BE17119FDED7B00F969CF /* CheckboxCell.h */,
+				813BE17219FDED7B00F969CF /* CheckboxCell.m */,
+				813BE17319FDED7B00F969CF /* CheckboxCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813BE17519FDED7B00F969CF /* CheckboxCell.xib in Resources */,
 				813D8E3019F7631800384E2E /* LaunchScreen.xib in Resources */,
 				81C1AB3319FD5645009D02A9 /* FilterSettingViewController.xib in Resources */,
 				813D8E5D19F76E6500384E2E /* BusinessCell.xib in Resources */,
@@ -352,6 +361,7 @@
 				81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */,
 				813D8E6019F7783200384E2E /* YelpClient.m in Sources */,
 				813D8E2219F7631800384E2E /* main.m in Sources */,
+				813BE17419FDED7B00F969CF /* CheckboxCell.m in Sources */,
 				813BE16F19FDC9DE00F969CF /* ExpandableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
