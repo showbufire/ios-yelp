@@ -22,16 +22,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l94-ih-409">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="8" y="8" width="584" height="584"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="l94-ih-409" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JyP-H7-MPh"/>
-                <constraint firstItem="l94-ih-409" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SJZ-si-vES"/>
-                <constraint firstAttribute="trailing" secondItem="l94-ih-409" secondAttribute="trailing" id="TLd-To-cNZ"/>
-                <constraint firstAttribute="bottom" secondItem="l94-ih-409" secondAttribute="bottom" id="VbM-eg-n5K"/>
+                <constraint firstItem="l94-ih-409" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="JyP-H7-MPh"/>
+                <constraint firstItem="l94-ih-409" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="SJZ-si-vES"/>
+                <constraint firstAttribute="trailing" secondItem="l94-ih-409" secondAttribute="trailing" constant="8" id="TLd-To-cNZ"/>
+                <constraint firstAttribute="bottom" secondItem="l94-ih-409" secondAttribute="bottom" constant="8" id="VbM-eg-n5K"/>
             </constraints>
         </view>
     </objects>
