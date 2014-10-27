@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSArray *sections;
 @property (strong, nonatomic) NSArray *sortOptions;
 @property (strong, nonatomic) NSArray *distanceOptions;
+@property (strong, nonatomic) NSArray *distanceInMiles;
 
 @property (strong, nonatomic) NSMutableSet *expandedSections;
 @property (strong, nonatomic) NSMutableSet *selectedCategories;
@@ -33,6 +34,7 @@ const int MOST_POP_SECTION = 0;
 const int DISTANCE_SECTION = 1;
 const int SORT_SECTION = 2;
 const int CATEGORY_SECTION = 3;
+const double METERS_PER_MILE = 1609.34;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,8 +42,10 @@ const int CATEGORY_SECTION = 3;
         self.sections = @[@"Most Popular", @"Distance", @"Sort by", @"Categories"];
         self.sortOptions = @[@"best match", @"distance", @"highest rated"];
         self.distanceOptions = @[@"Auto", @"0.3 miles", @"1 mile", @"5 miles", @"20 miles"];
+        self.distanceInMiles = @[@0, @0.3, @1.0, @5.0, @20.0];
         self.expandedSections = [NSMutableSet set];
         self.sortFilter = 0;
+        self.distanceChoice = 0;
         [self initCategories];
         self.selectedCategories = [NSMutableSet set];
     }
@@ -163,7 +167,11 @@ const int CATEGORY_SECTION = 3;
     if (indexPath.section == MOST_POP_SECTION) {
         self.dealChoice = value;
     } else if (indexPath.section == CATEGORY_SECTION) {
-        [self.selectedCategories addObject:[NSNumber numberWithInteger:indexPath.row]];
+        if (value) {
+            [self.selectedCategories addObject:[NSNumber numberWithInteger:indexPath.row]];
+        } else {
+            [self.selectedCategories removeObject:[NSNumber numberWithInteger:indexPath.row]];
+        }
     }
 }
 
@@ -224,7 +232,22 @@ const int CATEGORY_SECTION = 3;
     NSMutableDictionary *ret = [[NSMutableDictionary alloc] init];
     
     if (self.sortFilter) {
-        [ret setObject:[NSNumber numberWithInteger:self.sortFilter] forKey:@"sortFilter"];
+        [ret setObject:[NSNumber numberWithInteger:self.sortFilter] forKey:@"sort"];
+    }
+    [ret setObject:[NSNumber numberWithBool:self.dealChoice] forKey:@"deals_filter"];
+    
+    if (self.distanceChoice > 0) {
+        double distance = [self.distanceInMiles[self.distanceChoice] doubleValue] * METERS_PER_MILE;
+        [ret setObject:[NSNumber numberWithDouble:distance] forKey:@"radius_filter"];
+    }
+    
+    if ([self.selectedCategories count] > 0) {
+        NSMutableArray *selected = [[NSMutableArray alloc] init];
+        for (NSNumber* i in self.selectedCategories) {
+            NSString *code = self.allCategories[[i integerValue]][@"code"];
+            [selected addObject:code];
+        }
+        [ret setObject:[selected componentsJoinedByString:@","] forKey:@"category_filter"];
     }
     
     return ret;
