@@ -11,6 +11,7 @@
 #import "BusinessCell.h"
 #import "YelpClient.h"
 #import "FilterSettingViewController.h"
+#import "SVProgressHUD.h"
 
 NSString * const kYelpConsumerKey = @"OZ4PEz83dNdt3gfER3K8Ww";
 NSString * const kYelpConsumerSecret = @"DayH1uFEXU08sUtltMRDBLq08ko";
@@ -78,12 +79,15 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 }
 
 - (void) makeAPIRequest:(NSDictionary *) filters term:(NSString *)term {
+    [SVProgressHUD show];
     YelpClient *client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
     [client searchWithTerm:term parameters:filters success:^(AFHTTPRequestOperation *operation, id response) {
         self.businesses = [response objectForKey:@"businesses"];
         [self.tableView reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error: %@", [error description]);
+        [SVProgressHUD dismiss];
     }];
 }
 
