@@ -103,6 +103,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		812071461AADF37100645381 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		812071471AADF3AD00645381 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				813D8E4519F7656A00384E2E /* BusinessListViewController.h */,
+				813D8E4619F7656A00384E2E /* BusinessListViewController.m */,
+				813D8E4719F7656A00384E2E /* BusinessListViewController.xib */,
+				81C1AB2F19FD5645009D02A9 /* FilterSettingViewController.h */,
+				81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */,
+				81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		813D8E1319F7631800384E2E = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +146,13 @@
 		813D8E1E19F7631800384E2E /* yelp */ = {
 			isa = PBXGroup;
 			children = (
-				81C1AB3819FD9CA3009D02A9 /* common.h */,
+				81C1AB3419FD717F009D02A9 /* API */,
+				812071471AADF3AD00645381 /* Controller */,
 				81C1AB3719FD9732009D02A9 /* View */,
+				812071461AADF37100645381 /* Model */,
+				81C1AB3819FD9CA3009D02A9 /* common.h */,
 				813D8E2319F7631800384E2E /* AppDelegate.h */,
 				813D8E2419F7631800384E2E /* AppDelegate.m */,
-				81C1AB3519FD96F2009D02A9 /* ViewController */,
-				81C1AB3419FD717F009D02A9 /* API */,
 				813D8E2C19F7631800384E2E /* Images.xcassets */,
 				813D8E2E19F7631800384E2E /* LaunchScreen.xib */,
 				813D8E1F19F7631800384E2E /* Supporting Files */,
@@ -172,19 +193,6 @@
 				813D8E5F19F7783200384E2E /* YelpClient.m */,
 			);
 			name = API;
-			sourceTree = "<group>";
-		};
-		81C1AB3519FD96F2009D02A9 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				813D8E4519F7656A00384E2E /* BusinessListViewController.h */,
-				813D8E4619F7656A00384E2E /* BusinessListViewController.m */,
-				813D8E4719F7656A00384E2E /* BusinessListViewController.xib */,
-				81C1AB2F19FD5645009D02A9 /* FilterSettingViewController.h */,
-				81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */,
-				81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */,
-			);
-			name = ViewController;
 			sourceTree = "<group>";
 		};
 		81C1AB3719FD9732009D02A9 /* View */ = {
