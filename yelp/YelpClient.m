@@ -20,8 +20,7 @@
     return self;
 }
 
-- (AFHTTPRequestOperation *)searchWithTerm:(NSString *)term parameters:(NSDictionary *)parameters success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    
+- (void)search:(NSString *)term parameters:(NSDictionary *)parameters onComplete:(void (^)(NSArray *, NSError *))onComplete {
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
     NSDictionary *defaultParameters = @{@"term": term, @"ll" : @"37.774866,-122.394556"};
     NSMutableDictionary *allParameters = [defaultParameters mutableCopy];
@@ -29,8 +28,17 @@
         [allParameters addEntriesFromDictionary:parameters];
     }
     
-    
-    return [self GET:@"search" parameters:allParameters success:success failure:failure];
+    [self GET:@"search" parameters:allParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *businessDictionaries = [responseObject objectForKey:@"businesses"];
+        NSMutableArray *businesses = [[NSMutableArray alloc] init];
+        for (NSDictionary *businessDict in businessDictionaries) {
+            Business *business = [[Business alloc] initFromDictionary:businessDict];
+            [businesses addObject:business];
+        }
+        onComplete(businesses, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        onComplete(nil, error);
+    }];
 }
 
 @end

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BDBOAuth1RequestOperationManager.h"
+#import "Business.h"
 
 @interface YelpClient : BDBOAuth1RequestOperationManager
 
 - (id)initWithConsumerKey:(NSString *)consumerKey consumerSecret:(NSString *)consumerSecret accessToken:(NSString *)accessToken accessSecret:(NSString *)accessSecret;
 
-- (AFHTTPRequestOperation *)searchWithTerm:(NSString *)term parameters:(NSDictionary *)parameters success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)search:(NSString *)term parameters:(NSDictionary *)parameters onComplete:(void (^)(NSArray *businesses, NSError *error))onComplete;
 
 @end

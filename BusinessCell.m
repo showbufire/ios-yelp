@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addrLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
-@property (strong, nonatomic) NSDictionary *business;
+@property (strong, nonatomic) Business *business;
 
 @end
 
@@ -30,35 +30,33 @@
 //    self.nameLabel.preferredMaxLayoutWidth = self.nameLabel.frame.size.width;
 }
 
-- (void) updateViewAttributes {
-    self.nameLabel.text = self.business[@"name"];
-    [self.photoView setImageWithURL:[NSURL URLWithString:self.business[@"image_url"]]];
-    [self.starRatingView setImageWithURL:[NSURL URLWithString:self.business[@"rating_img_url"]]];
-    self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews", self.business[@"review_count"]];
-    self.addrLabel.text = [self.business valueForKeyPath:@"location.display_address"][0];
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
     
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", [self.business[@"distance"] floatValue] / METERS_PER_MILE];
+    // Configure the view for the selected state
+}
+
+- (void)updateBusiness:(Business *)business {
+    self.business = business;
+    self.nameLabel.text = business.name;
+    [self.photoView setImageWithURL:[NSURL URLWithString:business.imageURL]];
+    [self.starRatingView setImageWithURL:[NSURL URLWithString:business.ratingURL]];
+    self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews", [NSNumber numberWithInteger:business.reviewCount]];
+    self.addrLabel.text = self.business.addr;
+    
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", business.distance / METERS_PER_MILE];
     
     [self updateCategoryLabel];
 }
 
+
 - (void) updateCategoryLabel {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
-    for (NSArray *cat in self.business[@"categories"]) {
-        [arr addObject:cat[0]];
+    for (NSString *cat in self.business.categories) {
+        [arr addObject:cat];
     }
     self.categoryLabel.text = [arr componentsJoinedByString:@", "];
 }
 
-- (void) updateBusiness:(NSDictionary *)business {
-    self.business = business;
-    [self updateViewAttributes];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Business.h"
 
 @interface BusinessCell : UITableViewCell
 
-- (void) updateBusiness:(NSDictionary *)business;
+- (void) updateBusiness:(Business *)business;
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06CB95C2E8E39A115D602950 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 408746507FDECB5ED58F554E /* libPods.a */; };
+		8120714A1AADF4C000645381 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 812071491AADF4C000645381 /* Business.m */; };
 		813BE16F19FDC9DE00F969CF /* ExpandableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BE16D19FDC9DE00F969CF /* ExpandableCell.m */; };
 		813BE17019FDC9DE00F969CF /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */; };
 		813BE17419FDED7B00F969CF /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BE17219FDED7B00F969CF /* CheckboxCell.m */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		2911DA43AF8DC954187C07A3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		408746507FDECB5ED58F554E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		812071481AADF4C000645381 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
+		812071491AADF4C000645381 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		813BE16C19FDC9DE00F969CF /* ExpandableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableCell.h; sourceTree = "<group>"; };
 		813BE16D19FDC9DE00F969CF /* ExpandableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableCell.m; sourceTree = "<group>"; };
 		813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 		812071461AADF37100645381 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				812071481AADF4C000645381 /* Business.h */,
+				812071491AADF4C000645381 /* Business.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -199,11 +204,11 @@
 			isa = PBXGroup;
 			children = (
 				813D8E5919F76E6500384E2E /* BusinessCell.h */,
+				813D8E5A19F76E6500384E2E /* BusinessCell.m */,
+				813D8E5B19F76E6500384E2E /* BusinessCell.xib */,
 				813BE16C19FDC9DE00F969CF /* ExpandableCell.h */,
 				813BE16D19FDC9DE00F969CF /* ExpandableCell.m */,
 				813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */,
-				813D8E5A19F76E6500384E2E /* BusinessCell.m */,
-				813D8E5B19F76E6500384E2E /* BusinessCell.xib */,
 				81C1AB4319FDB268009D02A9 /* SwitchCell.h */,
 				81C1AB4419FDB268009D02A9 /* SwitchCell.m */,
 				81C1AB4519FDB268009D02A9 /* SwitchCell.xib */,
@@ -367,6 +372,7 @@
 				813D8E2519F7631800384E2E /* AppDelegate.m in Sources */,
 				81C1AB4619FDB268009D02A9 /* SwitchCell.m in Sources */,
 				81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */,
+				8120714A1AADF4C000645381 /* Business.m in Sources */,
 				813D8E6019F7783200384E2E /* YelpClient.m in Sources */,
 				813D8E2219F7631800384E2E /* main.m in Sources */,
 				813BE17419FDED7B00F969CF /* CheckboxCell.m in Sources */,

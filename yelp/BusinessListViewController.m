@@ -81,30 +81,23 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 - (void) makeAPIRequest:(NSDictionary *) filters term:(NSString *)term {
     [SVProgressHUD show];
     YelpClient *client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
-    [client searchWithTerm:term parameters:filters success:^(AFHTTPRequestOperation *operation, id response) {
-        self.businesses = [response objectForKey:@"businesses"];
-        [self.tableView reloadData];
-        [SVProgressHUD dismiss];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", [error description]);
-        [SVProgressHUD dismiss];
+    [client search:term parameters:filters onComplete:^(NSArray *businesses, NSError *error) {
+        if (error) {
+            NSLog(@"error: %@", [error description]);
+            [SVProgressHUD dismiss];
+        } else {
+            self.businesses = businesses;
+            [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+        }
     }];
 }
-
-- (NSArray *)getBusinessesToShow {
-    return self.businesses;
-}
-
-- (NSDictionary *)getBusinessToShowAtIndex:(NSInteger) idx {
-    return [self getBusinessesToShow][idx];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getBusinessesToShow] count];
+    return [self.businesses count];
 }
 
 - (UITableViewCell *)tableView:(UITableViewCell *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *business = [self getBusinessToShowAtIndex:indexPath.row];
+    Business *business = self.businesses[indexPath.row];
     BusinessCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BusinessCell"];
     [cell updateBusiness:business];
     return cell;
