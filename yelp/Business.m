@@ -24,6 +24,7 @@
         for (NSArray *cat in dict[@"categories"]) {
             [categories addObject:cat[0]];
         }
+        self.categories = categories;
     }
     return self;
 }
