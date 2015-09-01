@@ -45,7 +45,6 @@
     self.addrLabel.text = self.business.addr;
     
     self.distanceLabel.text = [NSString stringWithFormat:@"%.2f mi", business.distance / METERS_PER_MILE];
-    
     [self updateCategoryLabel];
 }
 
