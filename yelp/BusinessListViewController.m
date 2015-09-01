@@ -114,13 +114,6 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    // don't know why, but the view is messed up switching between views
-    [self.tableView reloadData];
-}
-
 - (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters {
     self.filters = filters;
     [self makeAPIRequest:filters term:@""];
