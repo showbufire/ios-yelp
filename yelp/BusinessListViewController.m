@@ -25,6 +25,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 
 @property (strong, nonatomic) NSArray *businesses;
 @property (strong, nonatomic) NSDictionary *filters;
+@property (strong, nonatomic) UISearchBar *searchBar;
 
 @end
 
@@ -48,6 +49,10 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
+- (IBAction)onTap:(id)sender {
+    [self.searchBar resignFirstResponder];
+}
+
 - (void) customizeNavigationBar {
     UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(goToFilterSettingPage)];
     
@@ -56,6 +61,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     self.navigationItem.leftBarButtonItem = filterButton;
     self.navigationItem.titleView = searchBar;
     searchBar.delegate = self;
+    self.searchBar = searchBar;
     
     self.navigationController.navigationBar.barTintColor = (UIColorFromRGB(0xc41200));
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -69,6 +75,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSString *term = searchBar.text;
     [self makeAPIRequest:self.filters term:term];
+    [self.searchBar resignFirstResponder];
 }
 
 - (void) goToFilterSettingPage {
