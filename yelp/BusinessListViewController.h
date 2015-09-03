@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FilterSettingViewController.h"
+#import "SettingsViewController.h"
 
-@interface BusinessListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, FilterSettingViewControllerDelegate, UISearchBarDelegate>
+@interface BusinessListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SettingsViewControllerDelegate, UISearchBarDelegate>
 
 @end

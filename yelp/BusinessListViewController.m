@@ -10,8 +10,9 @@
 #import "common.h"
 #import "BusinessCell.h"
 #import "YelpClient.h"
-#import "FilterSettingViewController.h"
 #import "SVProgressHUD.h"
+#import "SettingsViewController.h"
+#import "SettingsForm.h"
 
 NSString * const kYelpConsumerKey = @"OZ4PEz83dNdt3gfER3K8Ww";
 NSString * const kYelpConsumerSecret = @"DayH1uFEXU08sUtltMRDBLq08ko";
@@ -71,11 +72,12 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 }
 
 - (void) goToFilterSettingPage {
-    FilterSettingViewController *fsvc = [[FilterSettingViewController alloc] init];
-    fsvc.delegate = self; 
-    
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fsvc];
+    SettingsViewController *vc = [[SettingsViewController alloc] init];
+    vc.formController.form = [[SettingsForm alloc] init];
+    vc.delegate = self;
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nvc animated:YES completion:nil];
+
 }
 
 - (void) makeAPIRequest:(NSDictionary *) filters term:(NSString *)term {
@@ -132,7 +134,7 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)filterSettingViewController:(FilterSettingViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters {
+- (void)settingsViewController:(SettingsViewController *)filterSettingViewController didChangeFilters: (NSDictionary *) filters {
     self.filters = filters;
     [self makeAPIRequest:filters term:@""];
 }

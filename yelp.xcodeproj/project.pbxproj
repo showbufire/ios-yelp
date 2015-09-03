@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		06CB95C2E8E39A115D602950 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 408746507FDECB5ED58F554E /* libPods.a */; };
 		8120714A1AADF4C000645381 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 812071491AADF4C000645381 /* Business.m */; };
-		813BE16F19FDC9DE00F969CF /* ExpandableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BE16D19FDC9DE00F969CF /* ExpandableCell.m */; };
-		813BE17019FDC9DE00F969CF /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */; };
-		813BE17419FDED7B00F969CF /* CheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BE17219FDED7B00F969CF /* CheckboxCell.m */; };
-		813BE17519FDED7B00F969CF /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813BE17319FDED7B00F969CF /* CheckboxCell.xib */; };
 		813D8E2219F7631800384E2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2119F7631800384E2E /* main.m */; };
 		813D8E2519F7631800384E2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E2419F7631800384E2E /* AppDelegate.m */; };
 		813D8E2D19F7631800384E2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E2C19F7631800384E2E /* Images.xcassets */; };
@@ -23,10 +19,8 @@
 		813D8E5C19F76E6500384E2E /* BusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E5A19F76E6500384E2E /* BusinessCell.m */; };
 		813D8E5D19F76E6500384E2E /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813D8E5B19F76E6500384E2E /* BusinessCell.xib */; };
 		813D8E6019F7783200384E2E /* YelpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D8E5F19F7783200384E2E /* YelpClient.m */; };
-		81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */; };
-		81C1AB3319FD5645009D02A9 /* FilterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */; };
-		81C1AB4619FDB268009D02A9 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1AB4419FDB268009D02A9 /* SwitchCell.m */; };
-		81C1AB4719FDB268009D02A9 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C1AB4519FDB268009D02A9 /* SwitchCell.xib */; };
+		81B45F231B96B73D001B8062 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B45F221B96B73D001B8062 /* SettingsViewController.m */; };
+		81B45F261B96B76D001B8062 /* SettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B45F251B96B76D001B8062 /* SettingsForm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +38,6 @@
 		408746507FDECB5ED58F554E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		812071481AADF4C000645381 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		812071491AADF4C000645381 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
-		813BE16C19FDC9DE00F969CF /* ExpandableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableCell.h; sourceTree = "<group>"; };
-		813BE16D19FDC9DE00F969CF /* ExpandableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableCell.m; sourceTree = "<group>"; };
-		813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
-		813BE17119FDED7B00F969CF /* CheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxCell.h; sourceTree = "<group>"; };
-		813BE17219FDED7B00F969CF /* CheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxCell.m; sourceTree = "<group>"; };
-		813BE17319FDED7B00F969CF /* CheckboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
 		813D8E1C19F7631800384E2E /* yelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813D8E2019F7631800384E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		813D8E2119F7631800384E2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,13 +56,11 @@
 		813D8E5B19F76E6500384E2E /* BusinessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusinessCell.xib; path = ../BusinessCell.xib; sourceTree = "<group>"; };
 		813D8E5E19F7783200384E2E /* YelpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpClient.h; sourceTree = "<group>"; };
 		813D8E5F19F7783200384E2E /* YelpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpClient.m; sourceTree = "<group>"; };
-		81C1AB2F19FD5645009D02A9 /* FilterSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSettingViewController.h; sourceTree = "<group>"; };
-		81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSettingViewController.m; sourceTree = "<group>"; };
-		81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterSettingViewController.xib; sourceTree = "<group>"; };
+		81B45F211B96B73D001B8062 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		81B45F221B96B73D001B8062 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		81B45F241B96B76D001B8062 /* SettingsForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsForm.h; sourceTree = "<group>"; };
+		81B45F251B96B76D001B8062 /* SettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsForm.m; sourceTree = "<group>"; };
 		81C1AB3819FD9CA3009D02A9 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		81C1AB4319FDB268009D02A9 /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
-		81C1AB4419FDB268009D02A9 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
-		81C1AB4519FDB268009D02A9 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		B59E4DA4555D659049347F21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,9 +107,8 @@
 				813D8E4519F7656A00384E2E /* BusinessListViewController.h */,
 				813D8E4619F7656A00384E2E /* BusinessListViewController.m */,
 				813D8E4719F7656A00384E2E /* BusinessListViewController.xib */,
-				81C1AB2F19FD5645009D02A9 /* FilterSettingViewController.h */,
-				81C1AB3019FD5645009D02A9 /* FilterSettingViewController.m */,
-				81C1AB3119FD5645009D02A9 /* FilterSettingViewController.xib */,
+				81B45F211B96B73D001B8062 /* SettingsViewController.h */,
+				81B45F221B96B73D001B8062 /* SettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -204,17 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				813D8E5919F76E6500384E2E /* BusinessCell.h */,
+				81B45F241B96B76D001B8062 /* SettingsForm.h */,
+				81B45F251B96B76D001B8062 /* SettingsForm.m */,
 				813D8E5A19F76E6500384E2E /* BusinessCell.m */,
 				813D8E5B19F76E6500384E2E /* BusinessCell.xib */,
-				813BE16C19FDC9DE00F969CF /* ExpandableCell.h */,
-				813BE16D19FDC9DE00F969CF /* ExpandableCell.m */,
-				813BE16E19FDC9DE00F969CF /* ExpandableCell.xib */,
-				81C1AB4319FDB268009D02A9 /* SwitchCell.h */,
-				81C1AB4419FDB268009D02A9 /* SwitchCell.m */,
-				81C1AB4519FDB268009D02A9 /* SwitchCell.xib */,
-				813BE17119FDED7B00F969CF /* CheckboxCell.h */,
-				813BE17219FDED7B00F969CF /* CheckboxCell.m */,
-				813BE17319FDED7B00F969CF /* CheckboxCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -309,14 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813BE17519FDED7B00F969CF /* CheckboxCell.xib in Resources */,
 				813D8E3019F7631800384E2E /* LaunchScreen.xib in Resources */,
-				81C1AB3319FD5645009D02A9 /* FilterSettingViewController.xib in Resources */,
 				813D8E5D19F76E6500384E2E /* BusinessCell.xib in Resources */,
 				813D8E2D19F7631800384E2E /* Images.xcassets in Resources */,
 				813D8E4919F7656A00384E2E /* BusinessListViewController.xib in Resources */,
-				813BE17019FDC9DE00F969CF /* ExpandableCell.xib in Resources */,
-				81C1AB4719FDB268009D02A9 /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,13 +344,11 @@
 				813D8E4819F7656A00384E2E /* BusinessListViewController.m in Sources */,
 				813D8E5C19F76E6500384E2E /* BusinessCell.m in Sources */,
 				813D8E2519F7631800384E2E /* AppDelegate.m in Sources */,
-				81C1AB4619FDB268009D02A9 /* SwitchCell.m in Sources */,
-				81C1AB3219FD5645009D02A9 /* FilterSettingViewController.m in Sources */,
 				8120714A1AADF4C000645381 /* Business.m in Sources */,
+				81B45F261B96B76D001B8062 /* SettingsForm.m in Sources */,
 				813D8E6019F7783200384E2E /* YelpClient.m in Sources */,
 				813D8E2219F7631800384E2E /* main.m in Sources */,
-				813BE17419FDED7B00F969CF /* CheckboxCell.m in Sources */,
-				813BE16F19FDC9DE00F969CF /* ExpandableCell.m in Sources */,
+				81B45F231B96B73D001B8062 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
