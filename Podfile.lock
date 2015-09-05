@@ -25,17 +25,20 @@ PODS:
     - AFNetworking/NSURLSession (~> 2.4.0)
   - FXForms (1.2.13)
   - SVProgressHUD (1.0)
+  - UIScrollView-InfiniteScroll (0.7.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
   - BDBOAuth1Manager (~> 1.4.1)
   - FXForms (~> 1.2.13)
   - SVProgressHUD (~> 1.0)
+  - UIScrollView-InfiniteScroll (~> 0.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
   BDBOAuth1Manager: e4c50f9b4ecda6c2a9da680a45d89985e4f3edb6
   FXForms: 22d5ceafd8ca44d2f2be4827afcf00aaf80184a5
   SVProgressHUD: 46088807596a795cbcb4affd92cf3f13b6ab3dda
+  UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
 
 COCOAPODS: 0.34.4
