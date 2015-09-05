@@ -7,16 +7,19 @@
 //
 
 #import "FXForms.h"
+#import "Setting.h"
 
 @class SettingsViewController;
 
 @protocol SettingsViewControllerDelegate <NSObject>
 
-- (void)settingsViewController:(SettingsViewController *) filterSettingViewController didChangeFilters: (NSDictionary *) filters;
+- (void)settingsViewController:(SettingsViewController *) filterSettingViewController didChangeFilters:(Setting *) setting;
 
 @end
 
 @interface SettingsViewController : FXFormViewController
+
+- (SettingsViewController *) initWithSetting:(Setting *)setting;
 
 @property (nonatomic, weak) id<SettingsViewControllerDelegate> delegate;
 

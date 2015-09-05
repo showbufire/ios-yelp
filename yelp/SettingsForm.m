@@ -28,6 +28,17 @@
 
 @implementation SettingsForm
 
+- (SettingsForm *) initWithSetting:(Setting *)setting {
+    self = [super init];
+    if (self) {
+        self.sortBy = setting.sortBy;
+        self.offerDeal = setting.offerDeal;
+        self.categories = setting.categories;
+        self.distance = setting.distance;
+    }
+    return self;
+}
+
 - (NSDictionary *)offerDealField
 {
     return @{FXFormFieldTitle: @"Offer a Deal"};

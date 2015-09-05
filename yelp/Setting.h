@@ -1,22 +1,20 @@
 //
-//  SettingsForm.h
+//  Setting.h
 //  yelp
 //
-//  Created by Xiao Jiang on 9/1/15.
+//  Created by Xiao Jiang on 9/4/15.
 //  Copyright (c) 2015 Xiao Jiang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "FXForms.h"
-#import "Setting.h"
 
-@interface SettingsForm : NSObject <FXForm>
+@interface Setting : NSObject
 
 @property (nonatomic, assign) BOOL offerDeal;
 @property (assign, assign) NSInteger distance;
 @property (nonatomic, assign) NSInteger sortBy;
 @property (nonatomic, strong) NSArray *categories;
 
-- (SettingsForm *) initWithSetting:(Setting *)setting;
+- (NSDictionary *) toFilter;
 
 @end

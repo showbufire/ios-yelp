@@ -22,7 +22,11 @@
 
 - (void)search:(NSString *)term parameters:(NSDictionary *)parameters onComplete:(void (^)(NSArray *, NSError *))onComplete {
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
-    NSDictionary *defaultParameters = @{@"term": term, @"ll" : @"37.774866,-122.394556"};
+    NSString *safeTerm = @"";
+    if (term != nil) {
+        safeTerm = term;
+    }
+    NSDictionary *defaultParameters = @{@"term": safeTerm, @"ll" : @"37.774866,-122.394556"};
     NSMutableDictionary *allParameters = [defaultParameters mutableCopy];
     if (parameters) {
         [allParameters addEntriesFromDictionary:parameters];

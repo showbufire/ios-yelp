@@ -16,6 +16,15 @@
 
 @implementation SettingsViewController
 
+- (SettingsViewController *)initWithSetting:(Setting *)setting {
+    self = [super init];
+    if (self) {
+        SettingsForm *form = [[SettingsForm alloc] initWithSetting:setting];
+        self.formController.form = form;        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -37,45 +46,22 @@
 
 - (void) onApplyButton {
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self.delegate settingsViewController:self didChangeFilters:[self getFilters]];
+    [self.delegate settingsViewController:self didChangeFilters:[self getSetting]];
 }
 
-- (NSDictionary *)getFilters {
+- (Setting *)getSetting {
+    Setting *setting = [[Setting alloc] init];
     SettingsForm *settingsForm = self.formController.form;
-    NSMutableDictionary *filters = [[NSMutableDictionary alloc] init];
-    filters[@"deals_filter"] = [NSNumber numberWithBool:settingsForm.offerDeal];
-    filters[@"sort"] = [NSNumber numberWithInteger:settingsForm.sortBy];
-    if (settingsForm.distance > 0) {
-        filters[@"radius_filter"] = [NSNumber numberWithDouble:[self distanceInMeters:settingsForm.distance]];
-    }
-    if ([settingsForm.categories count] > 0) {
-        filters[@"category_filters"] = [settingsForm.categories componentsJoinedByString:@", "];
-    }
-    return filters;
+    setting.sortBy = settingsForm.sortBy;
+    setting.offerDeal = settingsForm.offerDeal;
+    setting.distance = settingsForm.distance;
+    setting.categories = settingsForm.categories;
+    return setting;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (double)distanceInMeters:(NSInteger)idx {
-    double ret = 0;
-    switch (idx) {
-        case 1:
-            ret = 0.3 * METERS_PER_MILE;
-            break;
-        case 2:
-            ret = METERS_PER_MILE;
-            break;
-        case 3:
-            ret = 5 * METERS_PER_MILE;
-            break;
-        case 4:
-            ret = 20 * METERS_PER_MILE;
-            break;
-    }
-    return ret;
 }
 
 /*

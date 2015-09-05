@@ -24,8 +24,9 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray *businesses;
-@property (strong, nonatomic) NSDictionary *filters;
+@property (strong, nonatomic) Setting *setting;
 @property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) NSString *searchTerm;
 
 @end
 
@@ -73,14 +74,14 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSString *term = searchBar.text;
-    [self makeAPIRequest:self.filters term:term];
+    self.searchTerm = searchBar.text;
+    self.setting = nil;
+    [self makeAPIRequest:nil term:self.searchTerm];
     [self.searchBar resignFirstResponder];
 }
 
 - (void) goToFilterSettingPage {
-    SettingsViewController *vc = [[SettingsViewController alloc] init];
-    vc.formController.form = [[SettingsForm alloc] init];
+    SettingsViewController *vc = [[SettingsViewController alloc] initWithSetting:self.setting];
     vc.delegate = self;
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nvc animated:YES completion:nil];
@@ -141,9 +142,9 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)settingsViewController:(SettingsViewController *)filterSettingViewController didChangeFilters: (NSDictionary *) filters {
-    self.filters = filters;
-    [self makeAPIRequest:filters term:@""];
+- (void)settingsViewController:(SettingsViewController *)filterSettingViewController didChangeFilters:(Setting *)setting {
+    self.setting = setting;
+    [self makeAPIRequest:[setting toFilter] term:self.searchTerm];
 }
 
 @end
