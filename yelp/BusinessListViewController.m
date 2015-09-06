@@ -13,6 +13,7 @@
 #import "SVProgressHUD.h"
 #import "SettingsViewController.h"
 #import "SettingsForm.h"
+#import <UIScrollView+InfiniteScroll.h>
 
 NSString * const kYelpConsumerKey = @"OZ4PEz83dNdt3gfER3K8Ww";
 NSString * const kYelpConsumerSecret = @"DayH1uFEXU08sUtltMRDBLq08ko";
@@ -40,6 +41,29 @@ NSString * const kYelpTokenSecret = @"oTa8o5dbjk5jS4CK08Ptz6flbpE";
     [self customizeNavigationBar];
     
     [self makeAPIRequest:nil term:@""];
+
+    self.tableView.infiniteScrollIndicatorStyle = UIActivityIndicatorViewStyleWhite;
+    [self.tableView addInfiniteScrollWithHandler:^(UITableView* tableView) {
+        YelpClient *client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
+        NSMutableDictionary *dict = [[self.setting toFilter] mutableCopy];
+        if (!dict) {
+            dict = [[NSMutableDictionary alloc] init];
+        }
+        dict[@"offset"] = [NSNumber numberWithInteger:[self.businesses count]];
+        [client search:self.searchTerm parameters:dict onComplete:^(NSArray *businesses, NSError *error) {
+            if (error) {
+                NSLog(@"error: %@", [error description]);
+            } else {
+                NSMutableArray *bs = [self.businesses mutableCopy];
+                for (Business* business in businesses) {
+                    [bs addObject:business];
+                }
+                self.businesses = bs;
+                [self.tableView reloadData];
+                [self.tableView finishInfiniteScroll];
+            }
+        }];
+    }];
 }
 
 - (void) setUpTableView {

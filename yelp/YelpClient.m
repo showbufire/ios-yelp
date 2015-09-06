@@ -26,12 +26,11 @@
     if (term != nil) {
         safeTerm = term;
     }
-    NSDictionary *defaultParameters = @{@"term": safeTerm, @"ll" : @"37.774866,-122.394556"};
+    NSDictionary *defaultParameters = @{@"term": safeTerm, @"ll" : @"37.774866,-122.394556", @"limit": [NSNumber numberWithInt:10]};
     NSMutableDictionary *allParameters = [defaultParameters mutableCopy];
     if (parameters) {
         [allParameters addEntriesFromDictionary:parameters];
     }
-    
     [self GET:@"search" parameters:allParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *businessDictionaries = [responseObject objectForKey:@"businesses"];
         NSMutableArray *businesses = [[NSMutableArray alloc] init];
